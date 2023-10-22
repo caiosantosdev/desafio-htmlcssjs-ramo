@@ -16,11 +16,12 @@ function leNumero(num){
   } else if(operador !== "" && n2 === ""){  // segundo caso: pessoa clicando no segundo num
     document.getElementById("display").innerHTML = ""
     document.getElementById("display").innerHTML += num
-    n2 = num
+    n2 = `${num}`
+    console.log(num, n2)
   } 
   else{
     document.getElementById("display").innerHTML += num
-    n2+= num //n1 = n1 + num
+    n2+= `${num}` //n1 = n1 + num
   }
 } 
 
@@ -61,9 +62,13 @@ function calcular(event) {
         break;
       case "^":
         resp = 1;
-        for(let i = 0 ; i < parseInt(n2); i++){
-          resp*=n1;
+        console.log(n2);
+        const maxIntervals = parseInt(n2); 
+        console.log (maxIntervals);
+        for(let i = 0 ; i < maxIntervals ; i++){
+          resp*=parseInt(n1);
         }
+        console.log(resp);
       default:
         break;
     }
